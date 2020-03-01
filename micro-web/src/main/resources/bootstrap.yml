@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: micro-web
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8763/eureka/
+    healthcheck:
+      enabled: true
+    registry-fetch-interval-seconds:
+  instance:
+    lease-renewal-interval-in-seconds: 30
+
+
+server:
+  port: 8087
+

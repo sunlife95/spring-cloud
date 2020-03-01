@@ -1,0 +1,29 @@
+server:
+  port: 8763
+eureka:
+  instance:
+    hostname: localhost1
+  client:
+    ## 是否向eureka注册
+    register-with-eureka: false
+    ## 是否拉取注册信息
+    fetch-registry: false
+    service-url:
+     defaultZone: http://localhost:8763/eureka
+
+  server:
+    enable-self-preservation: true
+
+security:
+  basic:
+    enabled: true
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+
+
+
+
+

@@ -1,0 +1,15 @@
+package com.sunlife.microorder;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableEurekaClient
+public class MicroOrderApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MicroOrderApplication.class, args);
+    }
+
+}

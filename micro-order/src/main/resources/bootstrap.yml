@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: micro-order
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8763/eureka/
+    healthcheck:
+      enabled: true
+server:
+  port: 8086
+
