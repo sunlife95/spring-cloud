@@ -13,7 +13,9 @@
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/micro-order/pom.xml" />
         <option value="$PROJECT_DIR$/micro-web/pom.xml" />
+        <option value="$PROJECT_DIR$/dashboard/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

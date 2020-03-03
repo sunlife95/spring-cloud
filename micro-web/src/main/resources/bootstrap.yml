@@ -1,6 +1,10 @@
 spring:
   application:
     name: micro-web
+#  security:
+#    user:
+#      name: admin
+#      password: admin
 
 eureka:
   client:
@@ -8,11 +12,21 @@ eureka:
       defaultZone: http://admin:admin@localhost:8763/eureka/
     healthcheck:
       enabled: true
-    registry-fetch-interval-seconds:
+    registry-fetch-interval-seconds: 90
   instance:
     lease-renewal-interval-in-seconds: 30
-
 
 server:
   port: 8087
 
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"

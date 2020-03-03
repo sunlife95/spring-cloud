@@ -1,6 +1,7 @@
+
 spring:
   application:
-    name: micro-order
+    name: dashboard
 #  security:
 #    user:
 #      name: admin
@@ -12,6 +13,17 @@ eureka:
       defaultZone: http://admin:admin@localhost:8763/eureka/
     healthcheck:
       enabled: true
-server:
-  port: 8086
+    registry-fetch-interval-seconds: 90
+  instance:
+    lease-renewal-interval-in-seconds: 30
 
+
+server:
+  port: 9990
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

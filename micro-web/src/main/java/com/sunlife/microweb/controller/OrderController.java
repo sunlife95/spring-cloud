@@ -1,5 +1,6 @@
 package com.sunlife.microweb.controller;
 
+import com.sunlife.microweb.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -26,16 +27,17 @@ public class OrderController {
 
     public static String SERVICE_NAME = "micro-order";
 
-    public static Boolean canVisitDb = false;
+    public static Boolean canVisitDb = true;
 
     @Autowired
     RestTemplate restTemplate;
+    @Autowired
+    OrderService orderService;
 
     @RequestMapping("/queryUser")
     public String queryUser() {
         s.incrementAndGet();
-        String results = restTemplate.getForObject("http://" +
-                SERVICE_NAME + "/queryUser", String.class);
+        String results = orderService.getOrder();
         return results;
     }
 
