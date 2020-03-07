@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/micro-web/pom.xml" />
         <option value="$PROJECT_DIR$/dashboard/pom.xml" />
         <option value="$PROJECT_DIR$/micro-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/config/pom.xml" />
       </list>
     </option>
   </component>
