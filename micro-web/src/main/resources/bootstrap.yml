@@ -37,3 +37,21 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+      circuitBreaker:
+        sleepWindowInMilliseconds: 10000 # 时间窗口时间
+
+#feign开启熔断器
+#  feign.hystrix.enabled=true
+  #开启feign的压缩功能
+#  feign.compression.request.enabled=true
+  #feign.compression.request.mime-types=text/xml,application/xml,application/json
+  #feign.compression.request.min-request-size=2048
+#  feign.compression.response.enabled=true
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
