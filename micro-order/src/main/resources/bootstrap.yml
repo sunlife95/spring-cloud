@@ -16,11 +16,20 @@ spring:
         max-interval: 2000
         # 最大重试次数
         max-attempts: 6
+    bus:
+      refresh:
+        enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 118.126.111.66
+    port: 5672
+    username: guest
+    password: guest
 #  security:
 #    user:
 #      name: admin
 #      password: admin
-
 eureka:
   client:
     service-url:
@@ -36,6 +45,5 @@ management:
     web:
       exposure:
         include: "*"
-
 encrypt:
   key: 0e010e17-2529-4581-b907-c8edcfd6be09

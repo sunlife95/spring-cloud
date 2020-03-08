@@ -38,5 +38,6 @@ management:
     web:
       exposure:
         include: "*"
+
 encrypt:
   key: 0e010e17-2529-4581-b907-c8edcfd6be09
