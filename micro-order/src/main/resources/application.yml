@@ -1,0 +1,13 @@
+
+mybatis:
+  typeAliasesPackage: com.sunlife.microorder.bean
+  mapper-locations: classpath:*Mapper.xml
+
+spring:
+  datasource:
+    url: jdbc:mysql://118.126.111.66:3306/mybase1
+    username: sunlife
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+
