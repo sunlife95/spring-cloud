@@ -1,6 +1,7 @@
 package com.sunlife.microorder.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sunlife.microorder.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -29,6 +30,9 @@ public class ConfigController {
     @Autowired
     Environment environment;
 
+    @Autowired
+    ConfigService configService;
+
     @RequestMapping("/getAllConfig")
     public String  printName(){
         JSONObject jsonObject = new JSONObject();
@@ -36,6 +40,17 @@ public class ConfigController {
         jsonObject.put("environment.name", environment.getProperty("name"));
         jsonObject.put("mypassword", mypassword);
         jsonObject.put("environment.mypassword", environment.getProperty("mypassword"));
+        return jsonObject.toJSONString();
+    }
+
+    @RequestMapping("/printServiceConfig")
+    public String  printServiceConfig(){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("servicehashcode", configService.printConfig());
+        jsonObject.put("controllerhashcode", configService.hashCode());
+
+
+        System.out.println("controller持有的servicehashcode：" + configService.hashCode());
         return jsonObject.toJSONString();
     }
 
