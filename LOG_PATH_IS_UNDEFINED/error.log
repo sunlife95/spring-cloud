@@ -1,0 +1,2 @@
+2020-03-15 14:22:26.550 [AMQP Connection 118.126.111.66:5672] ERROR o.s.a.r.c.CachingConnectionFactory -Channel shutdown: connection error
+2020-03-15 14:22:26.555 [AMQP Connection 118.126.111.66:5672] ERROR o.s.a.r.c.CachingConnectionFactory -Channel shutdown: connection error

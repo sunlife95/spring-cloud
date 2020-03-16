@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sunlife95/SpringCloudConfig
+          username: 1298629573@qq.com
+          password: sun?lingfu123
+          search-paths: SpringCloudConfig
+          # 本地缓存目录
+          basedir: E:/work/config/tmp
+          # 强制不走缓存
+          force-pull: true
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8763/eureka/
+    healthcheck:
+      enabled: true
+    registry-fetch-interval-seconds: 90
+  instance:
+    lease-renewal-interval-in-seconds: 30
+
+
+server:
+  port: 8085
+
+# 暴露所有监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+encrypt:
+  key: 0e010e17-2529-4581-b907-c8edcfd6be09

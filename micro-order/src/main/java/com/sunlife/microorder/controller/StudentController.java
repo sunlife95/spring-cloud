@@ -15,4 +15,14 @@ public class StudentController {
     public String query(Integer id) {
         return studentService.errorMsg(id);
     }
+
+
+    @RequestMapping("/test")
+    public String test(Integer id) {
+        studentService.testBatchInsert();
+        return "ok";
+    }
+
+
 }
+
