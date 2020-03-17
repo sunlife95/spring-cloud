@@ -26,6 +26,7 @@
         <module>micro-order</module>
         <module>micro-web</module>
         <module>zuul</module>
+        <module>security</module>
     </modules>
 
 
