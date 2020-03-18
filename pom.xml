@@ -27,6 +27,7 @@
         <module>micro-web</module>
         <module>zuul</module>
         <module>security</module>
+        <module>security-db</module>
     </modules>
 
 

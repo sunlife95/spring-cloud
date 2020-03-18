@@ -15,7 +15,6 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
-*/.idea
 *.iws
 *.iml
 *.ipr
@@ -30,6 +29,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### other dir ###
-E:/work/config/tmp
