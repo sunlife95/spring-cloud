@@ -1,10 +1,10 @@
-package com.sunlife.securitydb;
+package com.sunlife.microweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SecurityDbApplicationTests {
+class MicroWebSecurityApplicationTests {
 
     @Test
     void contextLoads() {

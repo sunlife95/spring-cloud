@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: micro-web-security
+  main:
+    allow-bean-definition-overriding: true
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8763/eureka/
+    healthcheck:
+      enabled: true
+    registry-fetch-interval-seconds: 90
+  instance:
+    lease-renewal-interval-in-seconds: 30
+
+server:
+  port: 8088
+
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+      circuitBreaker:
+        sleepWindowInMilliseconds: 10000 # 时间窗口时间
+
+#feign开启熔断器
+#  feign.hystrix.enabled=true
+  #开启feign的压缩功能
+#  feign.compression.request.enabled=true
+  #feign.compression.request.mime-types=text/xml,application/xml,application/json
+  #feign.compression.request.min-request-size=2048
+#  feign.compression.response.enabled=true
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://127.0.0.1:7070/auth/security/check
+      prefer-token-info: false
+    client:
+      client-id: micro-web
+      client-secret: 123456
+      access-token-uri: http://api-gateway/auth/oauth/token
+      grant-type: client_credentials
+      scope: all

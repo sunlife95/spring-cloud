@@ -87,4 +87,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .accessTokenValiditySeconds(1200)
                 .refreshTokenValiditySeconds(50000);
     }
+
+    public static void main(String[] args) {
+        String finalSecret = "{bcrypt}" + new BCryptPasswordEncoder().encode("123456");
+        System.out.println(finalSecret);
+    }
 }

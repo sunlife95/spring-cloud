@@ -25,6 +25,7 @@
         <module>micro-interface</module>
         <module>micro-order</module>
         <module>micro-web</module>
+        <module>micro-web-security</module>
         <module>zuul</module>
         <module>security</module>
         <module>security-db</module>
