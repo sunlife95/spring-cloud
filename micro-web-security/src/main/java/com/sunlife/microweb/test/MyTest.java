@@ -33,35 +33,35 @@ public class MyTest {
     @Rule
     public ContiPerfRule contiPerfRule = new ContiPerfRule();
 
-    @Test
-    public void test1() {
-
-        for (Integer i = 0; i < count; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        cdl.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    logger.info(Thread.currentThread().getName() + "==>" + orderService.getOrder());
-                }
-            }).start();
-            cdl.countDown();
-        }
-
-        try {
-            Thread.currentThread().join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    @PerfTest(invocations = 11, threads = 11)
-    public void test2(){
-        logger.info(Thread.currentThread().getName() + "==>" + orderService.getOrder());
-    }
+//    @Test
+//    public void test1() {
+//
+//        for (Integer i = 0; i < count; i++) {
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try {
+//                        cdl.await();
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    logger.info(Thread.currentThread().getName() + "==>" + orderService.getOrder());
+//                }
+//            }).start();
+//            cdl.countDown();
+//        }
+//
+//        try {
+//            Thread.currentThread().join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Test
+//    @PerfTest(invocations = 11, threads = 11)
+//    public void test2(){
+//        logger.info(Thread.currentThread().getName() + "==>" + orderService.getOrder());
+//    }
 }

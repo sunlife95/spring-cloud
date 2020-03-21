@@ -1,4 +1,4 @@
-package com.sunlife.microweb.oauth2;
+package com.sunlife.microorder.oauth2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;

@@ -1,4 +1,4 @@
-package com.sunlife.microweb.oauth2;
+package com.sunlife.microorder.oauth2;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -21,7 +21,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         http.csrf().disable();
         // 配置order访问控制，必须认证后才可以访问
         http.authorizeRequests()
-                .antMatchers("/order/**","/teacher/**","/user/**").authenticated();
+                .antMatchers("/order/**", "/teacher/**", "/user/**", "/feign/**").authenticated();
     }
 
     /*

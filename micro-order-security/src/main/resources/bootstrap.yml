@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: micro-order-security
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:8085
+      fail-fast: true
+      retry:
+        # 下次重试间隔时间系数
+        multiplier: 1000
+        # 默认重试的间隔时间
+        initial-interval: 1000
+        # 最大间隔时间
+        max-interval: 2000
+        # 最大重试次数
+        max-attempts: 6
+    bus:
+      refresh:
+        enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 118.126.111.66
+    port: 5672
+    username: guest
+    password: guest
+  main:
+    allow-bean-definition-overriding: true
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8763/eureka/
+    healthcheck:
+      enabled: true
+server:
+  port: 8089
+
+# 暴露所有监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+encrypt:
+  key: 0e010e17-2529-4581-b907-c8edcfd6be09
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://127.0.0.1:7070/auth/security/check
+      prefer-token-info: false
+    client:
+      client-id: micro-web
+      client-secret: 123456
+      access-token-uri: http://api-gateway/auth/oauth/token
+      grant-type: client_credentials
+      scope: all

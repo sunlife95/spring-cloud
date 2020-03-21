@@ -74,10 +74,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         tokenServices.setSupportRefreshToken(true);
         tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
         tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
-        tokenServices.setAccessTokenValiditySeconds(60 * 5);
+        tokenServices.setAccessTokenValiditySeconds(60 * 60);
         //重复使用
         tokenServices.setReuseRefreshToken(false);
-        tokenServices.setRefreshTokenValiditySeconds(60 * 10);
+        tokenServices.setRefreshTokenValiditySeconds(60 * 60 * 2);
         endpoints.tokenServices(tokenServices);
     }
 
